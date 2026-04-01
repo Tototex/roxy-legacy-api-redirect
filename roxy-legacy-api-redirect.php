@@ -17,5 +17,6 @@ if ($sub <= 0) {
     return;
 }
 
-header("Location: /member-check/?sub=" . $sub, true, 302);
+$target = home_url('/member-check/?sub=' . $sub);
+wp_safe_redirect($target, 302);
 exit;
